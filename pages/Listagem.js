@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text } from 'react-native-ui-lib';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import { DataTable } from 'react-native-paper';
 import LinhaTabela from '../components/LinhaTabela';
 import React from 'react';
@@ -22,7 +21,7 @@ export default function Listagem({ navigation }) {
 
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <DataTable>
         <DataTable.Header>
           <DataTable.Title>Nome</DataTable.Title>
@@ -32,7 +31,7 @@ export default function Listagem({ navigation }) {
         {usuarios.map((linha) => LinhaTabela(linha))}
       </DataTable>
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
