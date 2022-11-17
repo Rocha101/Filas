@@ -25,7 +25,7 @@ export default function Listagem({ navigation }) {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-    <Button outline margin-5 size={Button.sizes.large} label={'Cadastrar-se'} onPress={() => AbrirCadastro()} />
+      <Button outline margin-5 size={Button.sizes.large} label={'Cadastrar-se'} onPress={() => AbrirCadastro()} />
       <DataTable>
         <DataTable.Header>
           <DataTable.Title>Nome</DataTable.Title>
