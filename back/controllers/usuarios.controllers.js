@@ -42,5 +42,14 @@ module.exports = {
         const user = await Usuario.findOneAndUpdate({ _id }, data, { new: true });
 
         res.json(user);
+    },
+    async login(req,res){
+        const { email_usuario, senha_usuario } = req.body;
+        const data =  { email_usuario, senha_usuario }
+        const user = await Usuario.findOne({email_usuario,senha_usuario})
+        if(user == data){
+            res.json(user);
+            return res.status(200).json(user);
+        }
     }
 }

@@ -13,6 +13,7 @@ routes.get('/api/usuarios.index',Usuario.index);
 routes.get('/api/usuarios.details/:_id',Usuario.details);
 routes.delete('/api/usuarios/:_id', Usuario.delete);
 routes.put('/api/usuarios', Usuario.update);  
+routes.post('/api/login', Usuario.login)
 
 // Rotas de Dados
 // routes.post('/api/dados',Dados.create);
