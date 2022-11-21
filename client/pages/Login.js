@@ -28,15 +28,13 @@ export default function Login({ navigation }) {
       nome: "",
       email: "",
     };
-  } 
+  }
 
   React.useEffect(() => async function restoreUsuarioSalvo() {
     const restoredUsuario = await BuscarLogin();
     setEmail(restoredUsuario.email);
     setSenha(restoredUsuario.senha)
   }, [])
-
-
 
   Typography.loadTypographies({
     h5: { fontSize: 14, fontWeight: '100', lineHeight: 20 },
