@@ -1,5 +1,3 @@
 # Filas
 
-## Fazer
-
-Estruta de Back-end do Login/Cadastro + Telas Cadastro e Esqueci minha senha
+### Aplicativo Para Gestão de Horários voltados a Salas, Auditórios, Ambientes e Objetos Compartilhados
