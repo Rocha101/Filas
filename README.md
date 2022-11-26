@@ -7,6 +7,8 @@ ja o front com o comando 'npm start'
 
 Api serve para o cadastro de horários de cada usuário, **_Login e SignUp não contemplados_**
 
-
-
-
+# Alunos:
+Eduardo prudencio rocha
+Vinicius Medeiros Rodrigues Chede
+Gabriel rosso
+Vitor Hugo
