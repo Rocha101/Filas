@@ -1,11 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
-import { View, Text, Checkbox } from 'react-native-ui-lib';
+import { View, Text, Checkbox, Image } from 'react-native-ui-lib';
 import React from 'react';
 import { Typography, Button } from 'react-native-ui-lib';
 import { TextInput } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import api from '../services/api';
+import { Colors } from 'react-native-ui-lib';
+
+Colors.loadColors({
+  error: '#ff2442',
+  success: '#038a7d',
+  text: '#20303C'
+});
 
 
 export default function Login({ navigation }) {
@@ -65,7 +72,7 @@ export default function Login({ navigation }) {
   }
 
   async function IrLogin() {
-    navigation.navigate('Login');
+    navigation.navigate('Listagem');
   }
 
   function selected() {
@@ -76,14 +83,14 @@ export default function Login({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.Titulo}>Filas</Text>
       <View style={styles.ViewInputTexto}>
-        <TextInput label="E-mail" mode='outlined' style={styles.InputEmail} value={email} onChangeText={(email) => setEmail(email)} placeholder="E-mail"></TextInput>
-        <TextInput label="Senha" mode='outlined' style={styles.InputSenha} value={senha} onChangeText={(senha) => setSenha(senha)} placeholder="Senha" autoComplete='password' secureTextEntry></TextInput>
+        <TextInput label="E-mail" mode='outlined' value={email} onChangeText={(email) => setEmail(email)} placeholder="E-mail"></TextInput>
+        <TextInput label="Senha" mode='outlined' value={senha} onChangeText={(senha) => setSenha(senha)} placeholder="Senha" autoComplete='password' secureTextEntry></TextInput>
       </View>
       <View marginT-0 style={styles.ViewInputTexto}>
-        <Button margin-5 size={Button.sizes.large} onPress={() => IrLogin()} label={'Entrar'} />
-        <Button outline margin-5 size={Button.sizes.large} label={'Cadastrar-se'} onPress={() => IrCadastro()} />
+        <Button margin-5 size={Button.sizes.large} onPress={() => IrLogin()} label={'Entrar'} backgroundColor={Colors.success} />
+        <Button outline margin-5 size={Button.sizes.large} label={'Cadastrar-se'} onPress={() => IrCadastro()} outlineColor={Colors.success} />
         <View center marginT-10>
-          <Checkbox value={selecionado} label={'Lembrar Login'} onValueChange={() => selected()} />
+          <Checkbox value={selecionado} label={'Lembrar Login'} onValueChange={() => selected()} color={Colors.success} />
         </View>
       </View>
       <StatusBar style="auto" />

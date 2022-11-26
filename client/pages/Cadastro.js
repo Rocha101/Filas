@@ -5,6 +5,13 @@ import { View, Text } from 'react-native-ui-lib';
 import React from 'react';
 import Constants from 'expo-constants';
 import api from '../services/api';
+import { Colors } from 'react-native-ui-lib';
+
+Colors.loadColors({
+  error: '#ff2442',
+  success: '#038a7d',
+  text: '#20303C'
+});
 
 export default function Cadastro({ navigation }) {
   const [nome, setNome] = React.useState('');
@@ -66,7 +73,8 @@ export default function Cadastro({ navigation }) {
         icon="account-arrow-right"
         style={styles.botao}
         onPress={() => handleSubmit()}
-        mode="outlined">
+        mode="outlined"
+        color={Colors.success}>
         Cadastrar
       </Button>
       <StatusBar style="auto" />
