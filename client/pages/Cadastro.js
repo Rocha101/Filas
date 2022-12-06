@@ -6,6 +6,7 @@ import React from 'react';
 import Constants from 'expo-constants';
 import api from '../services/api';
 import { Colors } from 'react-native-ui-lib';
+import { MaskedTextInput } from "react-native-mask-text";
 
 Colors.loadColors({
   error: '#ff2442',
@@ -62,12 +63,18 @@ export default function Cadastro({ navigation }) {
           onChangeText={(password) => setPassword(password)}
           autoComplete="password"
           secureTextEntry></TextInput>
-        <TextInput
+        <TextInput render={props =>
+          <MaskedTextInput
+            {...props}
+            mask="99:99"
+          />
+        }
           mode="outlined"
           label="Horário"
-          placeholder="Horário"
+          keyboardType="numeric"
           value={horario}
-          onChangeText={(horario) => setHorario(horario)}></TextInput>
+          onChangeText={(horario) => setHorario(horario)}>
+        </TextInput>
       </View>
       <Button
         icon="account-arrow-right"
